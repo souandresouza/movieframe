@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="dark-mode">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extrator de Frame de Vídeo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Extrator de Frame de Vídeo</h1>
+        <div class="upload-area">
+            <label for="videoInput">Selecione ou arraste um vídeo</label>
+            <input type="file" id="videoInput" accept="video/*">
+        </div>
+        
+        <div id="preview" class="hidden">
+            <h2>Prévia do Frame</h2>
+            <div class="preview-container">
+                <img id="framePreview" alt="Frame extraído">
+            </div>
+            <button id="downloadBtn">Baixar Frame</button>
+        </div>
+        
+        <video id="videoElement" style="display:none;"></video>
+        <canvas id="canvas" style="display:none;"></canvas>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
