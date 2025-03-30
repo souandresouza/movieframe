@@ -13,7 +13,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const file = e.target.files[0];
         if (!file) return;
         
-        fileName = file.name.replace(/\.[^/.]+$/, ""); // Remove a extensão
+        // Armazenar o nome do arquivo sem a extensão
+        fileName = file.name.replace(/\.[^/.]+$/, "");
+        console.log("Nome do arquivo para download:", fileName);
         
         const videoURL = URL.createObjectURL(file);
         videoElement.src = videoURL;
@@ -57,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const link = document.createElement('a');
         link.href = dataURL;
         link.download = `${fileName}.png`;
+        console.log("Salvando como:", `${fileName}.png`);
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
